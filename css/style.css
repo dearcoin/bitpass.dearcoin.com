@@ -1,5 +1,8 @@
 html{background-color:#fafafa}
 body{color:#333;background-color:#fff}
+h1{font-size:28px}
+h2{font-size:22px}
+
 .navbar + *{margin-top:64px}
 .navbar-brand{margin-top:6px}
 .navbar{background-color:rgba(31, 150, 255, .85);color:#fff}
@@ -34,15 +37,19 @@ body{color:#333;background-color:#fff}
 .features > li > ul{padding-left:0;list-style:none}
 .features > li li{font-size:16px;color:#666}
 
+.main section{padding-top:20px;margin-top:40px;border-top:1px dotted #ccc}
+
 .footer{padding:40px 0 120px;background-color:#fafafa;color:#999}
 
 /* iOS WebView */
 .iOS .navbar{display:none}
 .iOS .navbar + *{margin-top:0}
+.iOS .main{padding-top:0}
 .iOS .footer{display:none}
 
 /* responsive */
 @media (min-width:1200px){
+	body{font-size:16px}
 	.screen-shoot{margin-right:60px}
 }
 
