@@ -36,6 +36,11 @@ body{color:#333;background-color:#fff}
 
 .footer{padding:40px 0 120px;background-color:#fafafa;color:#999}
 
+/* iOS WebView */
+.iOS .navbar{display:none}
+.iOS .navbar + *{margin-top:0}
+.iOS .footer{display:none}
+
 /* responsive */
 @media (min-width:1200px){
 	.screen-shoot{margin-right:60px}
