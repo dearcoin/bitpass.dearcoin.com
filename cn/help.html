@@ -41,6 +41,14 @@
 			<h1>Bitpass 帮助</h1>
 		</div>
 		<section>
+			<h2>如何使用Bitpass？</h2>
+			<ol>
+				<li>首先下载<a href="" target="_blank">Bitpass iOS客户端</a></li>
+				<li>启动应用，首次启动需要设置主密码并新建一个钥匙</li>
+				<li>选择一个钥匙，打开支持Bitpass的网站，扫描，授权。</li>
+			</ol>
+		</section>
+		<section>
 			<h2>iOS用户必须开启iCloud吗？</h2>
 			<p>是的。iOS用户用iCloud作为主要的加密备份方案，所以请开启iCloud并允许Bitpass使用iCloud。</p>
 		</section>
@@ -67,6 +75,18 @@
 		<section>
 			<h2>手机丢了后如何找回数据？</h2>
 			<p>使用您的新iPhone设备，开启iCloud并确保用同一个Appple ID登录。安装Bitpass，打开应用之后就会自动加载您的数据。</p>
+		</section>
+		<section>
+			<h2>Bitpass有什么风险？</h2>
+			<p>其风险来自与私钥的管理。若私钥泄露或者遗失，则会被他人伪造登陆，窃取你的信息和财产。尽管如此，在Bitpass 客户端中，均已使用AES(Advanced Encryption Standard)相关算法对关键数据进行加密保存，并借助iClound/Dropbox等完成云备份，可以有效解决该问题。Bitpass App中通过主密码以及PBKDF2对所有数据进行加密保护，只需牢记好主密码即可。</p>
+		</section>
+		<section>
+			<h2>云盘备份数据安全吗？</h2>
+			<p>Bitpass的数据都是高强度加密的，即使攻击者盗取了你云盘上的备份文件，依然是无法解开获取私钥的。</p>
+		</section>
+		<section>
+			<h2>与Google Authenticator有什么区别？</h2>
+			<p>Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而bitpass不存在此问题。</p>
 		</section>
 	</div>
 </div><!-- /.main -->
