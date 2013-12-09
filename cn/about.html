@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitpass</title>
+<title>关于Bitpass</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
@@ -21,64 +21,34 @@
 		</div>
 		<nav class="collapse navbar-collapse" rol="navigation">
     		<ul class="nav navbar-nav navbar-right">
-    			<li class="active"><a href="">Home</a></li>
+    			<li><a href="index.html">首页</a></li>
     			<li class="devide">/</li>
-    			<li><a href="documents.html">Documents</a></li>
+    			<li><a href="documents.html">开发文档</a></li>
     			<li class="devide">/</li>
-    			<li><a href="demo.html">Demo</a></li>
+    			<li><a href="demo.html">案例</a></li>
     			<li class="devide">/</li>
-    			<li><a href="help.html">Help</a></li>
+    			<li><a href="help.html">帮助</a></li>
     			<li class="devide">/</li>
-    			<li><a href="about.html">About</a></li>
+    			<li class="active"><a href="">关于</a></li>
     		</ul>
     	</nav>
 	</div>
 </header><!-- /.navbar -->
-<div class="banner">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-md-8">
-				<hgroup>
-					<h1>Secure Bitcoin-based Authentication System</h1>
-					<h2>Offline Registrations. Sign In Without Passwords.</h2>
-				</hgroup>
-				<p>
-					<a href="" class="btn btn-lg btn-download">
-						<i class="icon-apple"></i>
-						<small>Available on the</small>
-						App Store</a>
-					<a href="" class="btn btn-lg btn-download disabled">
-						<i class="icon-android"></i>
-						<small>Android</small>
-						Coming soon</a>
-				</p>
-			</div>
-			<div class="hidden-xs hidden-sm screen-shoot">
-			</div>
-		</div>
-	</div>
-</div><!-- /.banner -->
 
 <div class="main">
 	<div class="container">
-		<ul class="features">
-			<li><i class="icon-key"></i> One Password For All Bitpass Sites
-				<ul>
-					<li>All Your Site Keys On Your Phone</li>
-				</ul>
-			</li>
-			<li><i class="icon-shield"></i> High-Level Encryption
-				<ul>
-					<li>ECDSA-based Key Generation</li>
-					<li>PBKDF2 and AES256 Client Side Encryption</li>
-				</ul>
-			</li>
-			<li><i class="icon-cloud"></i> Cloud Backups
-				<ul>
-					<li>Automatically Back Up Encrypted Keys on iCloud</li>
-				</ul>
-			</li>
-		</ul>
+		<div class="page-header">
+			<h1>About Bitpass</h1>
+		</div>
+		<p class="lead">Secure Bitcoin-based Authentication System</p>
+		<section>
+			<h2>Brief Introduction</h2>
+			<p>Bitpass is a Bitcoin-based authentication protocol.  The server provides an authentication token to the client, which the client signs with its private key.  The server authenticates the client based on the signed token.</p>
+		</section>
+		<section>
+			<h2>What can be done?</h2>
+			<p>Bitpass can be used for website user authentication, with Bitcoin addresses being used as user IDs.  The server never stores user passwords or other information, so user data is protected even if the server is hacked.</p>
+		</section>
 	</div>
 </div><!-- /.main -->
 
@@ -88,10 +58,20 @@
 			&copy; 2013 <a href="http://dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">bitfund.pe</a>
 			<span class="pull-right">
 				<a href="/">English</a> /
-				<a href="/cn/index.html">中文</a>
+				<a href="/cn/about.html">中文</a>
 			</span>
 		</p>
 	</div>
 </footer><!-- /.footer -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/fn.js"></script>
+<script type="text/javascript">
+	$(function(){
+		if (_GET('client') == "iOS") {
+			$('body').addClass('iOS');
+		}
+	});
+</script>
 </body>
-</html>	
+</html>
