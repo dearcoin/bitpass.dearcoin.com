@@ -1,7 +1,11 @@
 html{background-color:#fafafa}
 body{color:#333;background-color:#fff}
+a{color:#1f96ff}
+a:hover{color:#1c87e5}
 h1{font-size:28px}
 h2{font-size:22px}
+code{padding:8px;margin:4px 0;font-size:.8em}
+br + code{display:block}
 
 .navbar + *{margin-top:64px}
 .navbar-brand{margin-top:6px}
@@ -37,7 +41,24 @@ h2{font-size:22px}
 .features > li > ul{padding-left:0;list-style:none}
 .features > li li{font-size:16px;color:#666}
 
-.main section{padding-top:20px;margin-top:40px;border-top:1px dotted #ccc}
+.aside-nav{background-color:#fff}
+.aside-nav.affix{top:64px}
+.aside-nav li > a{padding:12px 4px;border-bottom:1px solid #ccc;
+	-webkit-transition:all .3s ease-in-out;
+			transition:all .3s ease-in-out;
+}
+.aside-nav li > a:hover{background-color:transparent;border-bottom-color:#1f96ff}
+.aside-nav .active > a{border-bottom-color:#1f96ff}
+.aside-nav li > ul{margin-left:16px;font-size:.9em}
+
+.main .page-header{margin-top:0}
+.main .page-header h1{margin-top:0}
+.main .lead{border-bottom:1px dotted #ccc}
+.main section{padding-top:64px}
+.main section h2{padding-bottom:12px;font-size:20px;border-bottom:1px dotted #ccc}
+.main section h3{font-size:16px}
+.main section h4{font-size:14px}
+.main section:first-child{padding-top:0}
 
 .footer{padding:40px 0 120px;background-color:#fafafa;color:#999}
 
@@ -48,9 +69,16 @@ h2{font-size:22px}
 .iOS .footer{display:none}
 
 /* responsive */
+@media (min-width:768px){
+	.aside-nav{width:220px}
+}
+@media (min-width:992px){
+	.aside-nav{width:212px}
+}
 @media (min-width:1200px){
 	body{font-size:16px}
 	.screen-shoot{margin-right:60px}
+	.aside-nav{width:262px}
 }
 
 /* fonts */
