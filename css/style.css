@@ -7,9 +7,9 @@ h2{font-size:22px}
 code{padding:8px;margin:4px 0;font-size:.8em}
 br + code{display:block}
 
+.navbar{background-color:rgba(31, 150, 255, .85);color:#fff;border:none}
 .navbar + *{margin-top:64px}
 .navbar-brand{margin-top:6px}
-.navbar{background-color:rgba(31, 150, 255, .85);color:#fff}
 .navbar a{color:#fff}
 .navbar .nav > li > a{padding-top:24px;padding-bottom:16px;font-size:16px}
 .navbar .nav > li > a:hover,
