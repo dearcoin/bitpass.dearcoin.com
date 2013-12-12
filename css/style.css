@@ -4,8 +4,8 @@ a{color:#1f96ff}
 a:hover{color:#1c87e5}
 h1{font-size:28px}
 h2{font-size:22px}
-code{padding:8px;margin:4px 0;font-size:.8em}
-br + code{display:block}
+code{font-size:.8em}
+br + code{display:block;padding:8px;margin:4px 0}
 
 .navbar{background-color:rgba(31, 150, 255, .85);color:#fff;border:none}
 .navbar + *{margin-top:64px}
