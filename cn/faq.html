@@ -41,6 +41,14 @@
 			<h1>Bitpass 帮助</h1>
 		</div>
 		<section>
+			<h2>Bitpass要解决什么问题？</h2>
+			<p>一句话，消除了身份认证过程中的密码字段。因为密码是造成安全隐患的根本，例如，可能在通信过程中被窃取，可能在服务端泄露明文/密文，一旦消除了密码字段，则彻底消除认证过程中的安全隐患。</p>
+		</section>
+		<section>
+			<h2>与Google Authenticator有什么区别？</h2>
+			<p>Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而Bitpass不存在此问题。</p>
+		</section>
+		<section>
 			<h2>如何使用Bitpass？</h2>
 			<ol>
 				<li>首先下载<a href="" target="_blank">Bitpass iOS客户端</a></li>
@@ -81,12 +89,40 @@
 			<p>其风险来自与私钥的管理。若私钥泄露或者遗失，则会被他人伪造登陆，窃取你的信息和财产。尽管如此，在Bitpass 客户端中，均已使用AES(Advanced Encryption Standard)相关算法对关键数据进行加密保存，并借助iClound/Dropbox等完成云备份，可以有效解决该问题。Bitpass App中通过主密码以及PBKDF2对所有数据进行加密保护，只需牢记好主密码即可。</p>
 		</section>
 		<section>
+			<h2>Bitpass APP中的数据如何保障安全？</h2>
+			<p>我们设计的机制是非常安全的。首先，每位用户分配32字节的随机码(Salt)，用户输入自己的主密码（Master Password）后，结合Salt，采用哈希算法PBKDF2-SHA512迭代运算10000次，得到32字节的哈希密码。随后，使用该32字节的哈希密码，采用加密算法AES-256，对用户数据进行加密/解密。存储在APP/云盘等数据均为AES-256加密后的数据，这些算法的安全度目前都是顶级的。</p>
+		</section>
+		<section>
 			<h2>云盘备份数据安全吗？</h2>
 			<p>Bitpass的数据都是高强度加密的，即使攻击者盗取了你云盘上的备份文件，依然是无法解开获取私钥的。</p>
 		</section>
 		<section>
 			<h2>与Google Authenticator有什么区别？</h2>
 			<p>Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而bitpass不存在此问题。</p>
+		</section>
+		<section>
+			<h2>Bitpass与比特币的关系？</h2>
+			<p>Bitpass与比特币采用相同的签名算法(基于ECDSA)，并且签名时头部硬编码了与比特币相同的消息，所以与比特币的签名是兼容的。</p>
+		</section>
+		<h1>帮助 (开发者)</h1>
+		<section>
+			<h2>Q: 如果现有网站加上Bitpass作为登录需要做哪些工作？</h2>
+			<p>
+				<ul>
+					<li>首先，需要添加比特币的验证消息库(ECDSA的消息签名认证)，Demo里有PHP和Ruby的版本
+						<ul>
+							<li>在用户表中新增一个比特币地址字段，每个用户对应一个唯一地址</li>
+						</ul>
+					</li>
+					<li>然后，提供一个回调URL地址，用于接收与验证消息，并对验证后的消息做处理</li>
+					<li>对于未绑定Bitpass用户，先让其使用普通方式登录，进入绑定页面，在网站上显示一个唯一Token（二维码），然后等待该Token的回发验证消息
+						<ul>
+							<li>验证通过后，将此验证消息的签名地址绑定至该用户</li>
+						</ul>
+					</li>
+					<li>对于已绑定的用户，显示Token，等待该Token的回发验证消息，通过后，查询其地址绑定的用户，认证通过执行登录操作，完成身份并登录</li>
+				</ul>
+			</p>
 		</section>
 	</div>
 </div><!-- /.main -->

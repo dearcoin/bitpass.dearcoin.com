@@ -42,12 +42,26 @@
 		</div>
 		<p class="lead">Secure Bitcoin-based Authentication System</p>
 		<section>
-			<h2>Brief Introduction</h2>
-			<p>Bitpass is a Bitcoin-based authentication protocol.  The server provides an authentication token to the client, which the client signs with its private key.  The server authenticates the client based on the signed token.</p>
+			<h2>Introduction</h2>
+			<p>Bitpass is an authenticator based on asymmetric key cryptography.</p>
+			<p>Typically, users need to provide a username and password to authenticate themselves to a server. The server needs to save passwords, either as plain-text (bad) or hashes (better). This results in security issues:
+				<ol>
+					<li>passwords can be stolen in man-in-the-middle attacks.</li>
+					<li>passwords can be stolen from compromised servers. With Bitpass, no password is needed, and authentication requires only a user name (or public key).</li>
+				</ol>
+			</p>
 		</section>
 		<section>
 			<h2>What can be done?</h2>
 			<p>Bitpass can be used for website user authentication, with Bitcoin addresses being used as user IDs.  The server never stores user passwords or other information, so user data is protected even if the server is hacked.</p>
+		</section>
+		<section>
+			<h2>Authors</h2>
+			<p><a href="http://dearcoin.com" target="_blank">Dearcoin.com</a>, supported by <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>.</p>
+		</section>
+		<section>
+			<h2>Official Website</h2>
+			<p><a href="http://bitpass.dearcoin.com" target="_blank">http://bitpass.dearcoin.com</a></p>
 		</section>
 	</div>
 </div><!-- /.main -->

@@ -38,8 +38,16 @@
 <div class="main">
 	<div class="container">
 		<div class="page-header">
-			<h1>Bitpass FAQ</h1>
+			<h1>Bitpass F&amp;Q</h1>
 		</div>
+		<section>
+			<h2>What problem does Bitpass solve?</h2>
+			<p>In short, Bitpass eliminates the need for login passwords. Secure logins can be provided by using Bitcoin-based digital signatures. Security risks such as man-in-the-middle attacks, hacked servers, or brute-force attacks.</p>
+		</section>
+		<section>
+			<h2>How is Bitpass different from Google Authenticator?</h2>
+			<p>Google Authenticator provides 2-factor authentication, and the user's credentials are still required. User passwords are still stored on the server.</p>
+		</section>
 		<section>
 			<h2>Do iOS users need to set up iCloud?</h2>
 			<p>Yes. Bitpass uses iCloud as the primary encrypted backup method, so please turn on iCloud to back up your keys.</p>
@@ -61,12 +69,44 @@
 			<p>Definitely. Your backups are stored on iCloud using Apple's secure backup methods.  We use the same ECDSA cryptography techniques as Bitcoin to generate your keys, PBKDF2 to encrypt your master password, and then apply AES256 (the highest strength AES available) encryption on top of that.  Other than you, no one will be able to access your data.</p>
 		</section>
 		<section>
+			<h2>What risks are there with Bitpass?</h2>
+			<p>With Bitpass, you have to manage your private keys, just as with Bitcoin. If your private keys are leaked or lost, then others will be able to access your accounts associated with those keys. Your keys are protected using AES on the client, and backed up on iCloud, Dropbox, or other cloud service, accessible only with your master password. Do not lose your master password!</p>
+		</section>
+		<section>
+			<h2>How safe is Bitpass?</h2>
+			<p>Bitpass's design is extremely secure. Each user's master password is salted with a random 32-byte salt, and then hashed using PBKDF2-SHA512 and 10,000 iterations. The result is then encrypted using AES-256 before it is stored. All the local and backup copies of your data are encrypted using AES-256 as well.</p>
+		</section>
+		<section>
 			<h2>Does Bitpass store user data on its servers?</h2>
 			<p>No. Bitpass is a client side application, and does not rely on any central servers.</p>
 		</section>
 		<section>
 			<h2>How do I recover my data if my phone gets lost or stolen?</h2>
 			<p>If you lose your iPhone, just open iCloud and log in with your same Apple ID on your new phone. After you install Bitpass, it will automatically load your data from your iCloud backup.</p>
+		</section>
+		<section>
+			<h2>What's the relationship between Bitpass and Bitcoin?</h2>
+			<p>Bitpass uses the same digital signature algorithm as Bitcoin (ECDSA) and encode the resulting keys using the same algorithm, so Bitpass keys are actually valid Bitcoin addresses.</p>
+		</section>
+		<h1>Q&amp;A (Developers)</h1>
+		<section>
+			<h2>If I have a website and want to add Bitpass, what do I need to do?</h2>
+			<p>
+				<ul>
+					<li>Add a Bitcoin message validation library (ECDSA signature verification). Take a look at our demo for PHP and Ruby versions.
+						<ul>
+							<li>Add a Bitcoin address field for each user in your database.</li>
+						</ul>
+					</li>
+					<li>Provide a callback URL address to receive signed messages and process information after authorization.</li>
+					<li>To bind a Bitcoin address to a user, allow a user to log in traditionally and provide a page with a Bitcoin address displayed as a QR code. When the user scans this code, you will receive a validation message.
+						<ul>
+							<li>After validation, the user will be bound to this address.</li>
+						</ul>
+					</li>
+					<li>For users who are already bound, display the token to the user and wait for the token validation message. After you've received the message, check the message against the user's bound address.</li>
+				</ul>
+			</p>
 		</section>
 	</div>
 </div><!-- /.main -->
