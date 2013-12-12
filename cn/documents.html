@@ -78,7 +78,7 @@
 				<section id="t0">
 					<h2>参数</h2>
 					<ul>
-						<li>消息格式类似URL(RFC1738)，参数的值均需要进行URL编码。</li>
+						<li>消息格式类似URL (<a href="http://www.ietf.org/rfc/rfc1738.txt" target="_blank">RFC1738</a>)，参数的值均需要进行URL编码。</li>
 						<li>参数顺序无关</li>
 					</ul>
 				</section>
@@ -131,19 +131,19 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>sm</td>
+								<td>address</td>
+								<td>签名私钥所对应的比特币地址</td>
+								<td>是</td>
+							</tr>
+							<tr>
+								<td>signature</td>
+								<td>签名内容，采用Base64编码</td>
+								<td>是</td>
+							</tr>
+							<tr>
+								<td>message</td>
 								<td>source message，需要签名的消息内容</td>
 								<td>是</td>
-							</tr>
-							<tr>
-								<td>cbk</td>
-								<td>callback url，HTTP POST回调URL</td>
-								<td>是</td>
-							</tr>
-							<tr>
-								<td>dt</td>
-								<td>display title，用于客户端显示标题</td>
-								<td>否</td>
 							</tr>
 						</tbody>
 					</table>

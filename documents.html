@@ -42,26 +42,26 @@
 				<div class="aside-nav" data-spy="affix" data-offset-top="40">
 					<ul class="nav">
 						<li>
-							<a href="#t4">验证过程</a>
+							<a href="#t4">Authentication Procedure</a>
 						</li>
 						<li class="active">
-							<a href="#t0">参数</a>
+							<a href="#t0">Parameters</a>
 						</li>
-						<li><a href="#t1">服务端</a></li>
-						<li><a href="#t2">客户端</a>
+						<li><a href="#t1">Server</a></li>
+						<li><a href="#t2">Client</a>
 							<ul class="nav">
-								<li><a href="#st2-0">扩展参数字段</a></li>
+								<li><a href="#st2-0">Extended Reference Field</a></li>
 								<li>
-									<a href="#st2-1">服务端Callback返回格式</a>
+									<a href="#st2-1">Server Callback Return Formats</a>
 									<ul class="nav">
-										<li><a href="#st2-1-0">TEXT格式</a></li>
-										<li><a href="#st2-1-1">JSON格式</a></li>
-										<li><a href="#st2-1-2">XML格式</a></li>
+										<li><a href="#st2-1-0">Text Format</a></li>
+										<li><a href="#st2-1-1">JSON Format</a></li>
+										<li><a href="#st2-1-2">XML Format</a></li>
 									</ul>
 								</li>
 							</ul>
 						</li>
-						<li><a href="#t3">签名算法</a></li>
+						<li><a href="#t3">Signature Algorithms</a></li>
 					</ul>
 				</div>
 			</div>
@@ -70,136 +70,136 @@
 					<h1>Bitpass Deleveper Documents</h1>
 				</div>
 				<section id="t4">
-					<h2>验证过程</h2>
+					<h2>Authentication Procedure</h2>
 					<p>
-						<img src="https://f.cloud.github.com/assets/514951/1711484/fa7daaf6-614f-11e3-9a96-0acd62eec9b2.png" alt="Bitpass Authorization Flow">
+						<img src="/css/bitpass-authentication-procedure-en.png" alt="Bitpass Authentication Procedure">
 					</p>
 				</section>
 				<section id="t0">
-					<h2>参数</h2>
+					<h2>Parameters</h2>
 					<ul>
-						<li>消息格式类似URL(RFC1738)，参数的值均需要进行URL编码。</li>
-						<li>参数顺序无关</li>
+						<li>URL standard message format (<a href="http://www.ietf.org/rfc/rfc1738.txt" target="_blank">RFC1738</a>).</li>
+						<li>Parameter values are required to be encoded in the URL.</li>
 					</ul>
 				</section>
 				<hr>
 				<section id="t1">
-					<h2>服务端</h2>
-					<p>服务端需要按照下面格式提供出待验证消息：<br>
+					<h2>Server</h2>
+					<p>The server needs to provide a validation message according to the following format:<br>
 						<code>bitpass:?sm=[source message]&amp;cbk=[callback url]&amp;dt=[display title]</code>
 					</p>
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>参数</th>
-								<th>含义</th>
-								<th>是否必须</th>
+								<th>Parameter</th>
+								<th>Definition</th>
+								<th>Required?</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>sm</td>
-								<td>source message，需要签名的消息内容</td>
-								<td>是</td>
+								<td>source message to be signed</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>cbk</td>
-								<td>callback url，HTTP POST回调URL</td>
-								<td>是</td>
+								<td>callback url, HTTP POST request callback URL</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>dt</td>
-								<td>display title，用于客户端显示标题</td>
-								<td>否</td>
+								<td>display title to be displayed in the client</td>
+								<td>No</td>
 							</tr>
 						</tbody>
 					</table>
 				</section>
 				<section id="t2">
-					<h2>客户端</h2>
+					<h2>Client</h2>
 					<p><code>address=[bitcoin address]&amp;signature=[sign message with private key]&amp;message=[source message]</code></p>
 					<p>
-						签名消息时，采用兼容比特币消息签名格式。
+						Messages are signed using Bitcoin-compatible keys.
 					</p>
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>参数</th>
-								<th>含义</th>
-								<th>是否必须</th>
+								<th>Parameter</th>
+								<th>Meaning</th>
+								<th>Required?</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>sm</td>
-								<td>source message，需要签名的消息内容</td>
-								<td>是</td>
+								<td>address</td>
+								<td>bitcoin address corresponding to signing key</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>cbk</td>
-								<td>callback url，HTTP POST回调URL</td>
-								<td>是</td>
+								<td>signature (Base64 encoding)</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>dt</td>
-								<td>display title，用于客户端显示标题</td>
-								<td>否</td>
+								<td>source message</td>
+								<td>Yes</td>
 							</tr>
 						</tbody>
 					</table>
-					<p>签名后将上述格式数据，使用HTTP GET/POST请求发送至<code>cbk</code>指定URL。</p>
+					<p>After signing the data using the above method, use HTTP GET/POST requests to the specified callback URL.</p>
 					<section id="st2-0">
-						<h3>扩展参考字段 <span class="label label-info">暂不支持</span></h3>
-						<p class="alert alert-warning">需要用户授权</p>
-						<p>客户端回发数据时，可以加一些额外字段。通常手机可以获取地理信息等，例如：</p>
+						<h3>Extended Reference Field <span class="label label-info">To be supported</span></h3>
+						<p class="alert alert-warning">Need user's authorization</p>
+						<p>Extra data can be returned from the client. For example, a mobile phone can add location information, such as:</p>
 						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th>参数</th>
-									<th>含义</th>
-									<th>是否必须</th>
+									<th>Parameter</th>
+									<th>Meaning</th>
+									<th>Required</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>latitude</td>
-									<td>维度</td>
-									<td>否</td>
+									<td>latitude</td>
+									<td>No</td>
 								</tr>
 								<tr>
 									<td>longitude</td>
-									<td>经度</td>
-									<td>否</td>
+									<td>longitude</td>
+									<td>No</td>
 								</tr>
 							</tbody>
 						</table>
 					</section>
 					<section id="st2-1">
-						<h3>服务端Callback返回格式</h3>
+						<h3>Server Callback Return Formats</h3>
 						<table class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th>参数</th>
-									<th>含义</th>
-									<th>注释</th>
+									<th>Parameter</th>
+									<th>Meaning</th>
+									<th>Comment</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>code</td>
-									<td>返回码</td>
-									<td>1为成功，非1为错误</td>
+									<td>return code</td>
+									<td>1 is success, other value mean error</td>
 								</tr>
 								<tr>
 									<td>message</td>
-									<td>消息</td>
-									<td>成功时为"OK", 错误时显示对应信息。客户端通常会显示出该段文字。</td>
+									<td>message</td>
+									<td>Success returns <code>ok</code>, errors return the corresponding error message. Messages are usually displayed by the client.</td>
 								</tr>
 							</tbody>
 						</table>
-						<p>支持三种格式：Text, JSON, XML。默认为Text，其他返回格式需在HTTP Response Header添加对应的声明，以便客户端识别。</p>
+						<p>Three supported formats: Text, XML, JSON. The default is text. To use other formats, add the format in the HTTP Response Header.</p>
 						<section id="st2-1-0">
-							<h4>TEXT格式：</h4>
+							<h4>Text Formats</h4>
 							<p>Repsonse header:<br>
 								<code>Content-type: text/plain</code>
 							</p>
@@ -208,7 +208,7 @@
 							</p>
 						</section>
 						<section id="st2-1-1">
-							<h4>JSON格式：</h4>
+							<h4>JSON Formats</h4>
 							<p>Repsonse header:<br>
 								<code>Content-type: application/json</code>
 							</p>
@@ -217,7 +217,7 @@
 							</p>
 						</section>
 						<section id="st2-1-2">
-							<h4>XML格式：<span class="label label-info">暂不支持</span></h4>
+							<h4>XML Formats<span class="label label-info">To be supported</span></h4>
 							<p>Repsonse header:<br>
 								<code>Content-type: text/xml</code>
 							</p>
@@ -228,7 +228,7 @@
 					</section>
 				</section>
 				<section id="t3">
-					<h2>签名算法</h2>
+					<h2>Signature Algorithms</h2>
 					<p><img src="https://f.cloud.github.com/assets/514951/867985/5cef7d72-f760-11e2-8771-aaa629771f91.png" alt="Bitcoin sign message"></p>
 				</section>
 			</div>
