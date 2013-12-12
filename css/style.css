@@ -66,6 +66,7 @@ br + code{display:block}
 .iOS .navbar{display:none}
 .iOS .navbar + *{margin-top:0}
 .iOS .main{padding-top:0}
+.iOS .main section{padding-top:20px}
 .iOS .footer{display:none}
 
 /* responsive */
