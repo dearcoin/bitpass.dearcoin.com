@@ -10,6 +10,8 @@ br + code{display:block;padding:8px;margin:4px 0}
 .navbar{background-color:rgba(31, 150, 255, .85);color:#fff;border:none}
 .navbar + *{margin-top:64px}
 .navbar-brand{margin-top:6px}
+.navbar-toggle{margin-top:12px;border-color:#fff}
+.navbar-toggle .icon-bar{border:1px solid #fff}
 .navbar a{color:#fff}
 .navbar .nav > li > a{padding-top:24px;padding-bottom:16px;font-size:16px}
 .navbar .nav > li > a:hover,
@@ -70,8 +72,14 @@ br + code{display:block;padding:8px;margin:4px 0}
 .iOS .footer{display:none}
 
 /* responsive */
+@media (max-width:767px){
+	.navbar-collapse .devide{display:none}
+}
 @media (min-width:768px){
 	.aside-nav{width:220px}
+}
+@media (max-width:991px){
+	.navbar-collapse .devide{padding-right:0;padding-left:0}
 }
 @media (min-width:992px){
 	.aside-nav{width:212px}
