@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitpass 帮助</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<header class="navbar navbar-fixed-top" role="banner">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+	    	</button>
+	    	<a href="/" role="home" class="navbar-brand"><img src="/css/logo.png" alt="Bitpass logo"></a>
+		</div>
+		<nav class="collapse navbar-collapse" rol="navigation">
+    		<ul class="nav navbar-nav navbar-right">
+    			<li><a href="index.html">首页</a></li>
+    			<li class="devide">/</li>
+    			<li><a href="documentation.html">开发文档</a></li>
+    			<li class="devide">/</li>
+    			<li><a href="https://github.com/dearcoin/bitpass-demo">Github Demo</a></li>
+    			<li class="devide">/</li>
+    			<li class="active"><a href="faq.html">帮助</a></li>
+    			<li class="devide">/</li>
+    			<li><a href="about.html">关于</a></li>
+    		</ul>
+    	</nav>
+	</div>
+</header><!-- /.navbar -->
+
+<div class="main">
+	<div class="container">
+		<div class="page-header">
+			<h1>Bitpass 帮助</h1>
+		</div>
+		<section>
+			<h2>Bitpass要解决什么问题？</h2>
+			<p>一句话，消除了身份认证过程中的密码字段。因为密码是造成安全隐患的根本，例如，可能在通信过程中被窃取，可能在服务端泄露明文/密文，一旦消除了密码字段，则彻底消除认证过程中的安全隐患。</p>
+		</section>
+		<section>
+			<h2>与Google Authenticator有什么区别？</h2>
+			<p>Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而Bitpass不存在此问题。</p>
+		</section>
+		<section>
+			<h2>如何使用Bitpass？</h2>
+			<ol>
+				<li>首先下载<a href="" target="_blank">Bitpass iOS客户端</a></li>
+				<li>启动应用，首次启动需要设置主密码并新建一个钥匙</li>
+				<li>选择一个钥匙，打开支持Bitpass的网站，扫描，授权。</li>
+			</ol>
+		</section>
+		<section>
+			<h2>iOS用户必须开启iCloud吗？</h2>
+			<p>是的。iOS用户用iCloud作为主要的加密备份方案，所以请开启iCloud并允许Bitpass使用iCloud。</p>
+		</section>
+		<section>
+			<h2>如何备份我的钥匙？</h2>
+			<p>备份是自动的，您不需要做什么。当您创建钥匙或修改（如更改钥匙的标签）就会自动备份。</p>
+		</section>
+		<section>
+			<h2>备份是即时的吗？</h2>
+			<p>Bitpass会即时备份您对钥匙的修改。但iCloud存在延时，这取决于您的所处的环境以及网络状态。</p>
+		</section>
+		<section>
+			<h2>备份可以删除吗？</h2>
+			<p>是的。但我们不建议您在iCloud管理里删除备份。您可以通过Bitpass删除钥匙。</p>
+		</section>
+		<section>
+			<h2>备份数据安全吗？</h2>
+			<p>绝对安全。首先您的数据存储在iCloud上，由Apple公司安全的备份；然后，我们采用与比特币一样安全的ECDSA算法生成地址，并基于PBKDF2增强密码强度，对您的数据进行了AES256加密（目前最高级别的AES加密方法），所以，除了你自己，每人能使用数据。</p>
+		</section>
+		<section>
+			<h2>Bitpass有服务器存储用户数据吗？</h2>
+			<p>没有。Bitpass的设计是纯客户端，不依赖于中心服务器的。</p>
+		</section>
+		<section>
+			<h2>手机丢了后如何找回数据？</h2>
+			<p>使用您的新iPhone设备，开启iCloud并确保用同一个Appple ID登录。安装Bitpass，打开应用之后就会自动加载您的数据。</p>
+		</section>
+		<section>
+			<h2>Bitpass有什么风险？</h2>
+			<p>其风险来自与私钥的管理。若私钥泄露或者遗失，则会被他人伪造登陆，窃取你的信息和财产。尽管如此，在Bitpass 客户端中，均已使用AES(Advanced Encryption Standard)相关算法对关键数据进行加密保存，并借助iClound/Dropbox等完成云备份，可以有效解决该问题。Bitpass App中通过主密码以及PBKDF2对所有数据进行加密保护，只需牢记好主密码即可。</p>
+		</section>
+		<section>
+			<h2>Bitpass APP中的数据如何保障安全？</h2>
+			<p>我们设计的机制是非常安全的。首先，每位用户分配32字节的随机码(Salt)，用户输入自己的主密码（Master Password）后，结合Salt，采用哈希算法PBKDF2-SHA512迭代运算10000次，得到32字节的哈希密码。随后，使用该32字节的哈希密码，采用加密算法AES-256，对用户数据进行加密/解密。存储在APP/云盘等数据均为AES-256加密后的数据，这些算法的安全度目前都是顶级的。</p>
+		</section>
+		<section>
+			<h2>云盘备份数据安全吗？</h2>
+			<p>Bitpass的数据都是高强度加密的，即使攻击者盗取了你云盘上的备份文件，依然是无法解开获取私钥的。</p>
+		</section>
+		<section>
+			<h2>与Google Authenticator有什么区别？</h2>
+			<p>Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而bitpass不存在此问题。</p>
+		</section>
+		<section>
+			<h2>Bitpass与比特币的关系？</h2>
+			<p>Bitpass与比特币采用相同的签名算法(基于ECDSA)，并且签名时头部硬编码了与比特币相同的消息，所以与比特币的签名是兼容的。</p>
+		</section>
+		<hr>
+		<section>&nbsp;</section>
+		<h1>帮助 (开发者)</h1>
+		<section>
+			<h2>Q: 如果现有网站加上Bitpass作为登录需要做哪些工作？</h2>
+			<p>
+				<ul>
+					<li>首先，需要添加比特币的验证消息库(ECDSA的消息签名认证)，Demo里有PHP和Ruby的版本
+						<ul>
+							<li>在用户表中新增一个比特币地址字段，每个用户对应一个唯一地址</li>
+						</ul>
+					</li>
+					<li>然后，提供一个回调URL地址，用于接收与验证消息，并对验证后的消息做处理</li>
+					<li>对于未绑定Bitpass用户，先让其使用普通方式登录，进入绑定页面，在网站上显示一个唯一Token（二维码），然后等待该Token的回发验证消息
+						<ul>
+							<li>验证通过后，将此验证消息的签名地址绑定至该用户</li>
+						</ul>
+					</li>
+					<li>对于已绑定的用户，显示Token，等待该Token的回发验证消息，通过后，查询其地址绑定的用户，认证通过执行登录操作，完成身份并登录</li>
+				</ul>
+			</p>
+		</section>
+	</div>
+</div><!-- /.main -->
+
+<footer class="footer">
+	<div class="container">
+		<p>
+			&copy; 2013 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
+			<span class="pull-right">
+				<a href="/faq.html">English</a> /
+				<a href="/cn/faq.html">中文</a>
+			</span>
+		</p>
+	</div>
+</footer><!-- /.footer -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+<script type="text/javascript">
+	$(function(){
+		if (_GET('client') == "iOS") {
+			$('body').addClass('iOS');
+		}
+	});
+</script>
+
+<!-- GA -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46445603-1', 'dearcoin.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
