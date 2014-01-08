@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitpass - Secure Bitcoin-based Authentication System</title>
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+<title>About Bitpass</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 <header class="navbar navbar-fixed-top" role="banner">
@@ -21,64 +21,36 @@
 		</div>
 		<nav class="collapse navbar-collapse" rol="navigation">
     		<ul class="nav navbar-nav navbar-right">
-    			<li class="active"><a href="">Home</a></li>
+    			<li><a href="index.html">首页</a></li>
     			<li class="devide">/</li>
-    			<li><a href="documentation.html">Documentation</a></li>
+    			<li><a href="documentation.html">开发文档</a></li>
     			<li class="devide">/</li>
     			<li><a href="https://github.com/dearcoin/bitpass-demo">Github Demo</a></li>
     			<li class="devide">/</li>
-    			<li><a href="faq.html">FAQ</a></li>
+    			<li><a href="faq.html">帮助</a></li>
     			<li class="devide">/</li>
-    			<li><a href="about-dearcoin.html">About</a></li>
+    			<li class="active"><a href="about-dearcoin.html">关于</a></li>
     		</ul>
     	</nav>
 	</div>
 </header><!-- /.navbar -->
-<div class="banner">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-md-8">
-				<hgroup>
-					<h2>Bitpass - Simple and Secure Bitcoin-based Authentication System</h2>
-				</hgroup>
-				<p>
-					<a href="https://itunes.apple.com/app/bitpass/id777457278?ls=1&mt=8" class="btn btn-lg btn-download">
-						<i class="icon-apple"></i>
-						<small>Available on the</small>
-						App Store</a>
-					<a href="" class="btn btn-lg btn-download disabled">
-						<i class="icon-android"></i>
-						<small>Android</small>
-						Coming soon</a>
-				</p>
-			</div>
-			<div class="hidden-xs hidden-sm screen-shoot">
-			</div>
-		</div>
-	</div>
-</div><!-- /.banner -->
 
 <div class="main">
 	<div class="container">
-		<ul class="features">
-			<li><i class="icon-key"></i> Secure, Convenient Logins
-				<ul>
-					<li>Log In with QR codes</li>
-					<li>All Bitpass keys on your phone</li>
-				</ul>
-			</li>
-			<li><i class="icon-shield"></i> High-Level Encryption
-				<ul>
-					<li>ECDSA-based Key Generation</li>
-					<li>PBKDF2 and AES256 Client Side Encryption</li>
-				</ul>
-			</li>
-			<li><i class="icon-cloud"></i> Cloud Backups
-				<ul>
-					<li>Automatically Back Up Encrypted Keys on iCloud</li>
-				</ul>
-			</li>
-		</ul>
+		<div class="page-header">
+			<h1>About Dearcoin</h1>
+		</div>
+
+		<section>
+			<p>我们是一家从事比特币相关应用及服务开发的公司，由<a href="http://bitfund.pe" target="_blank">比特基金（Bitfund.pe）</a>支持。欢迎<a href="mailto:cc@dearcoin.com">邮件联系</a>。
+			</p>
+		</section>
+
+		<section>
+			<h2>链接</h2>
+			<p><a href="http://www.dearcoin.com" target="_blank">http://www.dearcoin.com</a></p>
+			<p><a href="http://bitpass.dearcoin.com" target="_blank">http://bitpass.dearcoin.com</a></p>
+		</section>
 	</div>
 </div><!-- /.main -->
 
@@ -87,15 +59,23 @@
 		<p>
 			&copy; 2014 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
 			<span class="pull-right">
-				<a href="index.html">English</a> /
-				<a href="./cn/index.html">中文</a>
+				<a href="../about-dearcoin.html">English</a> /
+				<a href="../cn/about-dearcoin.html">中文</a>
 			</span>
 		</p>
 	</div>
 </footer><!-- /.footer -->
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/fn.js"></script>
+<script type="text/javascript">
+	$(function(){
+		if (_GET('client') == "iOS") {
+			$('body').addClass('iOS');
+		}
+	});
+</script>
 
-<script type="text/javascript" src="./js/jquery.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <!-- GA -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -109,4 +89,4 @@
 </script>
 
 </body>
-</html>	
+</html>
