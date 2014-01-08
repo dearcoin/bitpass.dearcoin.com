@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitpass Developer Documents</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body data-spy="scroll" data-target=".aside-nav">
 <header class="navbar navbar-fixed-top" role="banner">
@@ -17,7 +17,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	    	</button>
-	    	<a href="/" role="home" class="navbar-brand"><img src="/css/logo.png" alt="Bitpass logo"></a>
+	    	<a href="index.html" role="home" class="navbar-brand"><img src="./css/logo.png" alt="Bitpass logo"></a>
 		</div>
 		<nav class="collapse navbar-collapse" rol="navigation">
     		<ul class="nav navbar-nav navbar-right">
@@ -29,7 +29,7 @@
     			<li class="devide">/</li>
     			<li><a href="faq.html">FAQ</a></li>
     			<li class="devide">/</li>
-    			<li><a href="about.html">About</a></li>
+    			<li><a href="about-dearcoin.html">About</a></li>
     		</ul>
     	</nav>
 	</div>
@@ -72,7 +72,7 @@
 				<section id="t4">
 					<h2>Authentication Procedure</h2>
 					<p>
-						<img src="/css/bitpass-authentication-procedure-en.png" alt="Bitpass Authentication Procedure">
+						<img src="./css/bitpass-authentication-procedure-en.png" alt="Bitpass Authentication Procedure">
 					</p>
 				</section>
 				<section id="t0">
@@ -188,7 +188,7 @@
 								<tr>
 									<td>code</td>
 									<td>return code</td>
-									<td>1 is success, other value mean error</td>
+									<td>Returns 1 if successful. Any other value indicates an error.</td>
 								</tr>
 								<tr>
 									<td>message</td>
@@ -200,28 +200,28 @@
 						<p>Three supported formats: Text, XML, JSON. The default is text. To use other formats, add the format in the HTTP Response Header.</p>
 						<section id="st2-1-0">
 							<h4>Text Formats</h4>
-							<p>Repsonse header:<br>
+							<p>Response header:<br>
 								<code>Content-type: text/plain</code>
 							</p>
-							<p>Repsonse body:<br>
+							<p>Response body:<br>
 								<code>&lt;int&gt;\t&lt;string&gt;</code>
 							</p>
 						</section>
 						<section id="st2-1-1">
 							<h4>JSON Formats</h4>
-							<p>Repsonse header:<br>
+							<p>Response header:<br>
 								<code>Content-type: application/json</code>
 							</p>
-							<p>Repsonse body:<br>
+							<p>Response body:<br>
 								<code>{code: 1, message: "OK"}</code>
 							</p>
 						</section>
 						<section id="st2-1-2">
 							<h4>XML Formats <span class="label label-info">To be supported</span></h4>
-							<p>Repsonse header:<br>
+							<p>Response header:<br>
 								<code>Content-type: text/xml</code>
 							</p>
-							<p>Repsonse body:<br>
+							<p>Response body:<br>
 								<code>&lt;result&gt;&lt;code&gt;1&lt;/code&gt;&lt;message&gt;OK&lt;/message&gt;&lt;/result&gt;&lt;/code&gt;</code>
 							</p>
 						</section>
@@ -239,16 +239,16 @@
 <footer class="footer">
 	<div class="container">
 		<p>
-			&copy; 2013 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
+			&copy; 2014 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
 			<span class="pull-right">
-				<a href="/documentation.html">English</a> /
-				<a href="/cn/documentation.html">中文</a>
+				<a href="./documentation.html">English</a> /
+				<a href="./cn/documentation.html">中文</a>
 			</span>
 		</p>
 	</div>
 </footer><!-- /.footer -->
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
 <!-- GA -->
 <script>

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitpass FAQ</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
 <header class="navbar navbar-fixed-top" role="banner">
@@ -17,7 +17,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	    	</button>
-	    	<a href="/" role="home" class="navbar-brand"><img src="/css/logo.png" alt="Bitpass logo"></a>
+	    	<a href="index.html" role="home" class="navbar-brand"><img src="./css/logo.png" alt="Bitpass logo"></a>
 		</div>
 		<nav class="collapse navbar-collapse" rol="navigation">
     		<ul class="nav navbar-nav navbar-right">
@@ -29,7 +29,7 @@
     			<li class="devide">/</li>
     			<li class="active"><a href="faq.html">FAQ</a></li>
     			<li class="devide">/</li>
-    			<li><a href="about.html">About</a></li>
+    			<li><a href="about-dearcoin.html">About</a></li>
     		</ul>
     	</nav>
 	</div>
@@ -38,77 +38,73 @@
 <div class="main">
 	<div class="container">
 		<div class="page-header">
-			<h1>Bitpass F&amp;Q</h1>
+			<h1>Bitpass FAQ</h1>
 		</div>
 		<section>
-			<h2>What problem does Bitpass solve?</h2>
-			<p>In short, Bitpass eliminates the need for login passwords. Secure logins can be provided by using Bitcoin-based digital signatures. Security risks such as man-in-the-middle attacks, hacked servers, or brute-force attacks.</p>
+			<h2>What is Bitpass?</h2>
+			<p>Bitpass is a new authentication protocol that uses Bitcoin keys to allow you to simply and securely log in to Bitpass-enabled websites. Authentication is as easy as scanning a QR code, and you only have to ever remember your master password.</p>
 		</section>
 		<section>
-			<h2>How is Bitpass different from Google Authenticator?</h2>
-			<p>Google Authenticator provides 2-factor authentication, and the user's credentials are still required. User passwords are still stored on the server.</p>
+			<h2>How does Bitpass improve authentication?</h2>
+			<p><b>Convenient</b> - Bitpass eliminates the need for login passwords by storing all login keys within the Bitpass application, protected by your master password. Using Bitpass, you can securely log in to all Bitpass-enabled websites by just scanning a QR code.</p>
+			<p><b>Client-side Security</b> - Bitpass uses the same encryption algorithms that Bitcoin also uses, which are some of the most advanced cryptographic algorithms available today. All client-side keys and backups are further protected by your master password and encrypted using AES256 encryption.</p>
+			<p><b>Server-side Security</b> - Bitpass's login paradigm eliminates the need for servers to store client passwords.  This mitigates security risks associated with compromised servers, man-in-the-middle attacks, and brute-force attacks.</p>
 		</section>
 		<section>
-			<h2>Do iOS users need to set up iCloud?</h2>
-			<p>Yes. Bitpass uses iCloud as the primary encrypted backup method, so please turn on iCloud to back up your keys.</p>
-		</section>
-		<section>
-			<h2>How do I back up my keys? </h2>
-			<p>Backups are automatic. When you create or modify a key (such as changing a label), your keys are automatically backed up again.</p>
-		</section>
-		<section>
-			<h2>Are backups immediate?</h2>
-			<p>Upon modifications, Bitpass will automatically back up your keys. However, there may be a delay backing up to iCloud, depending on network circumstances.</p>
-		</section>
-		<section>
-			<h2>Can I delete my backups?</h2>
-			<p>Yes. However, we recommend that you don't use iCloud to manage your keys. Rather, use Bitpass if you would like to delete any keys.</p>
-		</section>
-		<section>
-			<h2>Are my backups secure?</h2>
-			<p>Definitely. Your backups are stored on iCloud using Apple's secure backup methods.  We use the same ECDSA cryptography techniques as Bitcoin to generate your keys, PBKDF2 to encrypt your master password, and then apply AES256 (the highest strength AES available) encryption on top of that.  Other than you, no one will be able to access your data.</p>
-		</section>
-		<section>
-			<h2>What risks are there with Bitpass?</h2>
-			<p>With Bitpass, you have to manage your private keys, just as with Bitcoin. If your private keys are leaked or lost, then others will be able to access your accounts associated with those keys. Your keys are protected using AES on the client, and backed up on iCloud, Dropbox, or other cloud service, accessible only with your master password. Do not lose your master password!</p>
+			<h2>How is Bitpass different from two-factor authentication solutions, such as Google Authenticator?</h2>
+			<p>Bitpass is not a form of multi-factor authentication.  Multi-factor authentication such as Google Authenticator are solutions that require multiple forms of verification, and is implemented in such a way that the user's original credentials are still required. Bitpass is secure enough to be used as the primary authentication method, but is flexible enough to be implemented as part of a multi-factor authentication strategy.</p>
 		</section>
 		<section>
 			<h2>How safe is Bitpass?</h2>
 			<p>Bitpass's design is extremely secure. Each user's master password is salted with a random 32-byte salt, and then hashed using PBKDF2-SHA512 and 10,000 iterations. The result is then encrypted using AES-256 before it is stored. All the local and backup copies of your data are encrypted using AES-256 as well.</p>
 		</section>
 		<section>
-			<h2>Does Bitpass store user data on its servers?</h2>
-			<p>No. Bitpass is a client side application, and does not rely on any central servers.</p>
+			<h2>Are there any risks associated with Bitpass?</h2>
+			<p>With Bitpass, you have to manage your private keys, just as with Bitcoin. If your private keys are leaked or lost, then others will be able to access your accounts associated with those keys. Your keys are protected using AES on the client, and backed up on iCloud, Dropbox, or other cloud service, accessible only with your master password. Do not lose your master password!</p>
 		</section>
 		<section>
-			<h2>How do I recover my data if my phone gets lost or stolen?</h2>
-			<p>If you lose your iPhone, just open iCloud and log in with your same Apple ID on your new phone. After you install Bitpass, it will automatically load your data from your iCloud backup.</p>
+			<h2>I am a developer.  How do I incorporate Bitpass into my application?</h2>
+			<p>Check out the <a href="./documentation.html">developer documentation</a> page, and you can also take a look at the <a href="https://github.com/dearcoin/bitpass-demo">demo</a> we have provided on Github.</p>
+		</section>
+		<section>
+			<h2>I want to use Bitpass to log in to websites.  What do I do?</h2>
+			<p>Great! Download the <a href="https://itunes.apple.com/app/bitpass/id777457278?ls=1&mt=8">iOS app</a> and set up iCloud.  You can then create and associate your keys with Bitpass-enabled websites.</p>
+		</section>
+		<section>
+			<h2>Do you have an Android version?</h2>
+			<p>We are currently developing an Android version, so if you use an Android phone, stay tuned!</p>
+		</section>
+		<section>
+			<h2>Do iOS users need to set up iCloud?</h2>
+			<p>Yes. Bitpass uses iCloud as the primary encrypted backup method, so please turn on iCloud to back up your keys.</p>
+		</section>
+		<section>
+			<h2>How do I back up my keys?</h2>
+			<p>Bitpass automatically backs up your keys to iCloud. Whenever you create or modify a key, including making changes such as modifying the label of a key, your keys are automatically backed up again.</p>
+		</section>
+		<section>
+			<h2>Are backups immediate?</h2>
+			<p>Depending on network speeds, there may be a delay in backing up your keys. If your network connection is slow, there may be a delay.</p>
+		</section>
+		<section>
+			<h2>Can I delete my backups?</h2>
+			<p>Yes. You can delete your backups, as well as individual keys, through the Bitpass app.  You can also delete the backup directly through iCloud.  However, we recommend that you don't use iCloud to manage your keys, as it may cause synchronization issues. Rather, use Bitpass if you would like to delete or modify any keys, or manage your backups.</p>
+		</section>
+		<section>
+			<h2>Are my backups secure?</h2>
+			<p>Your backups are stored on iCloud using Apple's secure backup methods.  We use the same ECDSA cryptography techniques as Bitcoin to generate your keys, PBKDF2 to encrypt your master password, and then apply AES256 (the highest strength AES available) encryption on top of that.  Other than you, no one will be able to access your data.</p>
+		</section>
+		<section>
+			<h2>Does Bitpass store user data on its servers?</h2>
+			<p>No. Bitpass is a client side application, and does not store any of your data on any central servers.</p>
+		</section>
+		<section>
+			<h2>What happens if my phone gets lost or stolen?</h2>
+			<p>If you lose your iPhone, just open iCloud and log in with your same Apple ID on your new phone. After you install Bitpass, it will automatically load your data from your iCloud backup. If anyone else gets a hold of your phone, they will be unable to access your keys without your master password.</p>
 		</section>
 		<section>
 			<h2>What's the relationship between Bitpass and Bitcoin?</h2>
 			<p>Bitpass uses the same digital signature algorithm as Bitcoin (ECDSA) and encode the resulting keys using the same algorithm, so Bitpass keys are actually valid Bitcoin addresses.</p>
-		</section>
-		<hr>
-		<section>&nbsp;</section>
-		<h1>Q&amp;A (Developers)</h1>
-		<section>
-			<h2>If I have a website and want to add Bitpass, what do I need to do?</h2>
-			<p>
-				<ul>
-					<li>Add a Bitcoin message validation library (ECDSA signature verification). Take a look at our demo for PHP and Ruby versions.
-						<ul>
-							<li>Add a Bitcoin address field for each user in your database.</li>
-						</ul>
-					</li>
-					<li>Provide a callback URL address to receive signed messages and process information after authorization.</li>
-					<li>To bind a Bitcoin address to a user, allow a user to log in traditionally and provide a page with a Bitcoin address displayed as a QR code. When the user scans this code, you will receive a validation message.
-						<ul>
-							<li>After validation, the user will be bound to this address.</li>
-						</ul>
-					</li>
-					<li>For users who are already bound, display the token to the user and wait for the token validation message. After you've received the message, check the message against the user's bound address.</li>
-				</ul>
-			</p>
 		</section>
 	</div>
 </div><!-- /.main -->
@@ -116,17 +112,17 @@
 <footer class="footer">
 	<div class="container">
 		<p>
-			&copy; 2013 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
+			&copy; 2014 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
 			<span class="pull-right">
-				<a href="/faq.html">English</a> /
-				<a href="/cn/faq.html">中文</a>
+				<a href="./faq.html">English</a> /
+				<a href="./cn/faq.html">中文</a>
 			</span>
 		</p>
 	</div>
 </footer><!-- /.footer -->
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/fn.js"></script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/fn.js"></script>
 <script type="text/javascript">
 	$(function(){
 		if (_GET('client') == "iOS") {
@@ -140,7 +136,7 @@
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-46445603-1', 'dearcoin.com');
   ga('send', 'pageview');
