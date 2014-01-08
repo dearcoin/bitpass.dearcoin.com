@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitpass - 基于比特币的安全身份验证系统</title>
+<title>About Bitpass</title>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
@@ -17,11 +17,11 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	    	</button>
-	    	<a href="index.html" role="home" class="navbar-brand"><img src="../css/logo.png" alt="Bitpass logo"></a>
+	    	<a href="index.html" role="home" class="navbar-brand"><img src="./css/logo.png" alt="Bitpass logo"></a>
 		</div>
 		<nav class="collapse navbar-collapse" rol="navigation">
     		<ul class="nav navbar-nav navbar-right">
-    			<li class="active"><a href="">首页</a></li>
+    			<li><a href="index.html">首页</a></li>
     			<li class="devide">/</li>
     			<li><a href="documentation.html">开发文档</a></li>
     			<li class="devide">/</li>
@@ -29,57 +29,28 @@
     			<li class="devide">/</li>
     			<li><a href="faq.html">帮助</a></li>
     			<li class="devide">/</li>
-    			<li><a href="about-dearcoin.html">关于</a></li>
+    			<li class="active"><a href="about-dearcoin.html">关于</a></li>
     		</ul>
     	</nav>
 	</div>
 </header><!-- /.navbar -->
-<div class="banner">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-md-8">
-				<hgroup>
-					<h1>基于比特币的安全身份验证系统</h1>
-					<h2>离线注册，无需密码登录。</h2>
-				</hgroup>
-				<p>
-					<a href="https://itunes.apple.com/app/bitpass/id777457278?ls=1&mt=8" class="btn btn-lg btn-download">
-						<i class="icon-apple"></i>
-						<small>Available on the</small>
-						App Store</a>
-					<a href="" class="btn btn-lg btn-download disabled">
-						<i class="icon-android"></i>
-						<small>Android</small>
-						Coming soon</a>
-				</p>
-			</div>
-			<div class="hidden-xs hidden-sm screen-shoot">
-			</div>
-		</div>
-	</div>
-</div><!-- /.banner -->
 
 <div class="main">
 	<div class="container">
-		<ul class="features">
-			<li><i class="icon-key"></i> 安全、便捷的登录
-				<ul>
-					<li>二维码扫描，轻松登录</li>
-					<li>Bitpass安全管理全部钥匙</li>
-				</ul>
-			</li>
-			<li><i class="icon-shield"></i> 高级加密
-				<ul>
-					<li>基于ECDSA创建秘钥</li>
-					<li>基于PBKDF2及AES256高强度客户端加密</li>
-				</ul>
-			</li>
-			<li><i class="icon-cloud"></i> 云端备份
-				<ul>
-					<li>自动备份加密数据到iCloud</li>
-				</ul>
-			</li>
-		</ul>
+		<div class="page-header">
+			<h1>About Dearcoin</h1>
+		</div>
+
+		<section>
+			<p>我们是一家从事比特币相关应用及服务开发的公司，由<a href="http://bitfund.pe" target="_blank">比特基金（Bitfund.pe）</a>支持。欢迎<a href="mailto:cc@dearcoin.com">邮件联系</a>。
+			</p>
+		</section>
+
+		<section>
+			<h2>链接</h2>
+			<p><a href="http://www.dearcoin.com" target="_blank">http://www.dearcoin.com</a></p>
+			<p><a href="http://bitpass.dearcoin.com" target="_blank">http://bitpass.dearcoin.com</a></p>
+		</section>
 	</div>
 </div><!-- /.main -->
 
@@ -88,21 +59,29 @@
 		<p>
 			&copy; 2013 <a href="http://www.dearcoin.com" target="_blank">Dearcoin</a> & <a href="http://bitfund.pe" target="_blank">Bitfund.pe</a>
 			<span class="pull-right">
-				<a href="index.html">English</a> /
-				<a href="../cn/index.html">中文</a>
+				<a href="../about-dearcoin.html">English</a> /
+				<a href="../cn/about-dearcoin.html">中文</a>
 			</span>
 		</p>
 	</div>
 </footer><!-- /.footer -->
-
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/fn.js"></script>
+<script type="text/javascript">
+	$(function(){
+		if (_GET('client') == "iOS") {
+			$('body').addClass('iOS');
+		}
+	});
+</script>
+
 <!-- GA -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-46445603-1', 'dearcoin.com');
   ga('send', 'pageview');
@@ -110,4 +89,4 @@
 </script>
 
 </body>
-</html>	
+</html>
