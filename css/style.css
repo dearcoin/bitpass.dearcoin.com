@@ -90,6 +90,13 @@ br + code{display:block;padding:8px;margin:4px 0}
 	.aside-nav{width:262px}
 }
 
+/* for retina */
+@media (-webkit-min-device-pixel-ratio:2), (-o-min-device-pixel-ratio:3 / 2), (min-device-pixel-ratio:2) {
+	.navbar-brand{background:url(logo@2x.png) no-repeat center center;background-size:115px 26px}
+	.navbar-brand img{visibility:hidden}
+	.screen-shoot{background-image:url(screen-shoot@2x.png);background-size:100% 100%}
+}
+
 /* fonts */
 @font-face {
 	font-family: 'icomoon';
