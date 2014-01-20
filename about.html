@@ -82,9 +82,10 @@
 <script type="text/javascript" src="./js/fn.js"></script>
 <script type="text/javascript">
     $(function(){
-            if (_GET('client') == "iOS") {
-                    $('body').addClass('iOS');
-            }
+        var client = _GET('client').toLowerCase();
+        if (client == "ios" || client == "android") {
+            $('body').addClass('iOS');
+        }
     });
 </script>
 
